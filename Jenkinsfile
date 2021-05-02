@@ -22,7 +22,7 @@ pipeline
         {
             steps
             {
-                sh 'scp /home/ubuntu/.jenkins/workspace/decpipeline/webapp/target/webapp.war ubuntu@172.31.23.14:/var/lib/tomcat9/webapps/Qaenv.war'
+                sh 'scp /home/ubuntu/.jenkins/workspace/decpipeline1/webapp/target/webapp.war ubuntu@172.31.23.14:/var/lib/tomcat9/webapps/Qaenv1.war'
             }
         }
         stage('continous testing')
@@ -30,7 +30,7 @@ pipeline
             steps
             {
                 git 'https://github.com/selenium-saikrishna/FunctionalTesting.git'
-                sh 'java -jar /home/ubuntu/.jenkins/workspace/decpipeline/testing.jar'
+                sh 'java -jar /home/ubuntu/.jenkins/workspace/decpipeline1/testing.jar'
                 
             }
         }
@@ -38,7 +38,7 @@ pipeline
         {
             steps
             {
-                sh 'scp /home/ubuntu/.jenkins/workspace/decpipeline/webapp/target/webapp.war ubuntu@172.31.25.159:/var/lib/tomcat9/webapps/prodenv.war'
+                sh 'scp /home/ubuntu/.jenkins/workspace/decpipeline1/webapp/target/webapp.war ubuntu@172.31.25.159:/var/lib/tomcat9/webapps/prodenv1.war'
 
             }
         }
